@@ -7,7 +7,6 @@ import YourPlants from "../screens/YourPlants";
 import Schedule from "../screens/Schedule";
 
 import colors from "../config/colors.js";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const Tab = createBottomTabNavigator();
 
