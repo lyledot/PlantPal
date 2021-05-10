@@ -6,5 +6,6 @@ export default {
     dutchWhite: '#ead7ae',
     burlywood: '#dcba83',
     black: '#000',
-    white: '#fff'
+    white: '#fff',
+    grey: '#dbdbdb',
 }

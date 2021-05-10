@@ -1,13 +1,15 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import * as Font from "expo-font";
 
-import HomeScreen from "./app/screens/HomeScreen";
-import ProfileScreen from "./app/screens/ProfileScreen";
+import { MainStackNavigator } from "./app/navigation/MainStackNavigator";
+import { BottomTabNavigator } from "./app/navigation/BottomTabNavigator";
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default class App extends React.Component {
   state = {
@@ -34,21 +36,7 @@ export default class App extends React.Component {
     if (this.state.fontsLoaded) {
       return (
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{
-                title: "", //empty title
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="Profile"
-              component={ProfileScreen}
-              options={({ route }) => ({ title: route.params.name })}
-            />
-          </Stack.Navigator>
+          <BottomTabNavigator/>
         </NavigationContainer>
       );
     } else {

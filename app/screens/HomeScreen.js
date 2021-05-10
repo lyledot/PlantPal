@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Button, useState } from "react";
 import {
   SafeAreaView,
   View,
@@ -10,15 +10,7 @@ import {
 
 import colors from "../config/colors.js";
 
-const getCurrentDate = () => {
-  var date = new Date().getDate();
-  var month = new Date().getMonth() + 1;
-  var year = new Date().getFullYear();
-
-  return date + "-" + month + "-" + year; //format: dd-mm-yyyy;
-};
-
-export default function HomeScreen({ navigation }) {
+function HomeScreen({ navigation }) {
   const [plants, setPlants] = useState([
     { name: "Pilea Peperomioides", key: "1" },
     { name: "Dracaena Trifasciata", key: "2" },
@@ -27,7 +19,7 @@ export default function HomeScreen({ navigation }) {
   ]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
         <Text style={styles.title}>Summary</Text>
         <Text style={styles.date}>Monday 8th February</Text>
@@ -38,10 +30,16 @@ export default function HomeScreen({ navigation }) {
       </View>
 
       <FlatList
-        style={styles.listView}
+        style={styles.container}
         data={plants}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => console.log(item.name + " has been pressed!")}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("YourPlants", {
+                name: item.name,
+              })
+            }
+          >
             <Text style={styles.item}> {item.name} </Text>
           </TouchableOpacity>
         )}
@@ -53,6 +51,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
+    marginTop: 20,
   },
   title: {
     fontFamily: "PoetsenOne",
@@ -71,30 +70,25 @@ const styles = StyleSheet.create({
     fontSize: 20,
     top: 20,
     left: 20,
+    marginTop: 20,
   },
-  listView: {
-    top: 20,
+  container: {
+    marginTop: 20,
+    paddingTop: 10,
+    flex: 1,
   },
   item: {
-    fontFamily: "RobotoRegular",
+    fontFamily: "RobotoBold",
     fontSize: 20,
     height: 100,
-    marginTop: 20,
+    borderRadius: 15, // rounded corners
+    overflow: "hidden",
+    marginBottom: 15,
     marginHorizontal: 20,
-    padding: 15,
-    paddingTop: 35,
-    justifyContent: "center",
-    backgroundColor: colors.dutchWhite,
+    backgroundColor: colors.grey,
+    paddingTop: 55,
+    paddingLeft: 15,
   },
 });
 
-{
-  /* <View>
-        <Button
-          title="Button to other page"
-          onPress={() =>
-            navigation.navigate("Profile", { name: "Custom profile header" })
-          }
-        />
-      </View> */
-}
+export default HomeScreen;
