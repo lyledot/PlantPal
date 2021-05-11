@@ -11,3 +11,11 @@ function Schedule({ navigation }) {
 }
 
 export default Schedule;
+
+<PlantStack.Screen
+  name="Your Plants"
+  component={YourPlants}
+  options={
+    (({ route }) => ({ title: route.params.name }), { headerShown: false })
+  }
+/>;

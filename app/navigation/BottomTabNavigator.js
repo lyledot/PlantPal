@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import HomeScreen from "../screens/HomeScreen";
-import YourPlants from "../screens/YourPlants";
 import Schedule from "../screens/Schedule";
 
 import { PlantStackScreen } from "./PlantStackScreen";

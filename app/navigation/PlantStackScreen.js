@@ -1,27 +1,31 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
+import { createStackNavigator, HeaderBackButton } from "@react-navigation/stack";
 
-import HomeScreen from "../screens/HomeScreen";
 import YourPlants from "../screens/YourPlants";
-import Schedule from "../screens/Schedule";
 import PlantPage from "../screens/PlantPage";
+import AddPlant from "../screens/AddPlant";
 
 const PlantStack = createStackNavigator();
 
 const PlantStackScreen = () => {
   return (
-    <PlantStack.Navigator>
+    <PlantStack.Navigator 
+    initialRouteName="Your Plants"
+    headerStyle>
       <PlantStack.Screen
-        name="YourPlants"
+        name="Your Plants"
         component={YourPlants}
-        options={{
-          headerShown: false,
-        }}
+        options={{ headerShown: false, headerTitle:"Plants"}}
       />
       <PlantStack.Screen
-        name="PlantPage"
+        name="Plant Page"
         component={PlantPage}
-        options={({ route }) => ({ title: route.params.name })}
+        options={({ route }) => ({ title: route.params.name }), { headerBackTitleVisible: false}}
+      />
+      <PlantStack.Screen
+        name="Add a Plant"
+        component={AddPlant}
       />
     </PlantStack.Navigator>
   );

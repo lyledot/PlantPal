@@ -44,4 +44,13 @@ export default StyleSheet.create({
     paddingTop: 55,
     paddingLeft: 15,
   },
+  button: {
+    backgroundColor: colors.dutchWhite,
+    width: 30,
+    height: 30,
+    borderRadius: 8,
+    overflow: "hidden",
+    marginHorizontal: 3,
+    left: 155,
+  },
 });
