@@ -15,6 +15,8 @@ import colors from "../config/colors";
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
 
+var minusFlag = true;
+
 export default function YourPlants({ navigation }) {
   const [plants, setPlants] = useState([
     { name: "Calathea Ornata", key: "1" },
@@ -25,8 +27,6 @@ export default function YourPlants({ navigation }) {
     { name: "Pilea Peperomioides", key: "6" },
     { name: "Pothos", key: "7" },
   ]);
-
-  var minusFlag = true;
 
   const [minus, setMinus] = useState('minus');
   const [btnColor, setColor] = useState(colors.dutchWhite);
