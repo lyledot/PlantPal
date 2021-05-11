@@ -1,15 +1,9 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import * as Font from "expo-font";
 
-import { MainStackNavigator } from "./app/navigation/MainStackNavigator";
 import { BottomTabNavigator } from "./app/navigation/BottomTabNavigator";
-
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default class App extends React.Component {
   state = {

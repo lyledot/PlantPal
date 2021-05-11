@@ -6,6 +6,8 @@ import HomeScreen from "../screens/HomeScreen";
 import YourPlants from "../screens/YourPlants";
 import Schedule from "../screens/Schedule";
 
+import { PlantStackScreen } from "./PlantStackScreen";
+
 import colors from "../config/colors.js";
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +22,7 @@ const BottomTabNavigator = () => {
     >
       <Tab.Screen 
       name="Plants" 
-      component={YourPlants} 
+      component={PlantStackScreen} 
       options={{
         tabBarLabel: "Plants",
         tabBarIcon: ({color, size}) => (

@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../screens/HomeScreen";
 import YourPlants from "../screens/YourPlants";
+import Schedule from "../screens/Schedule";
+import PlantPage from "../screens/PlantPage";
 
 const Stack = createStackNavigator();
 
@@ -25,4 +27,12 @@ const MainStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator };
+const PlantStack = createStackNavigator();
+
+const PlantStackScreen = () => {
+  return (
+    <PlantStack.Navigator>
+      <PlantStack.Screen name="PlantPage" component={PlantPage} />
+    </PlantStack.Navigator>
+  );
+}

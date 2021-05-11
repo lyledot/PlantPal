@@ -10,21 +10,15 @@ import {
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
 
-export default function YourPlants({ navigation }) {
+export default function PlantPage({ navigation }) {
   const [plants, setPlants] = useState([
     { name: "Calathea Ornata", key: "1" },
-    { name: "Dracaena Trifasciata", key: "2" },
-    { name: "Fittonia", key: "3" },
-    { name: "Monstera Deliciosa", key: "4" },
-    { name: "Oxalis Triangularis", key: "5" },
-    { name: "Pilea Peperomioides", key: "6" },
-    { name: "Pothos", key: "7" },
   ]);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>
-        <Text style={s.title}>Your Plants</Text>
+        <Text style={s.title}>Plant?</Text>
       </View>
 
       <FlatList
@@ -32,11 +26,7 @@ export default function YourPlants({ navigation }) {
         data={plants}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("PlantPage", {
-                name: item.name,
-              })
-            }
+            onPress={() => console.log(item.name + " has been pressed.")}
           >
             <Text style={s.item}> {item.name} </Text>
           </TouchableOpacity>
