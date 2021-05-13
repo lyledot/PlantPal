@@ -33,13 +33,7 @@ export default function HomeScreen({ navigation }) {
         style={s.container}
         data={plants}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("YourPlants", {
-                name: item.name,
-              })
-            }
-          >
+          <TouchableOpacity>
             <Text style={s.item}> {item.name} </Text>
           </TouchableOpacity>
         )}

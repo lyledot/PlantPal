@@ -1,6 +1,9 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { createStackNavigator, HeaderBackButton } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  HeaderBackButton,
+} from "@react-navigation/stack";
 
 import YourPlants from "../screens/YourPlants";
 import PlantPage from "../screens/PlantPage";
@@ -10,22 +13,22 @@ const PlantStack = createStackNavigator();
 
 const PlantStackScreen = () => {
   return (
-    <PlantStack.Navigator 
-    initialRouteName="Your Plants"
-    headerStyle>
+    <PlantStack.Navigator initialRouteName="Your Plants" headerStyle>
       <PlantStack.Screen
         name="Your Plants"
         component={YourPlants}
-        options={{ headerShown: false, headerTitle:"Plants"}}
+        options={{ headerShown: false, headerTitle: " " }}
+        // instead of headerBackTitleVisible, I need
       />
       <PlantStack.Screen
         name="Plant Page"
         component={PlantPage}
-        options={({ route }) => ({ title: route.params.name }), { headerBackTitleVisible: false}}
+        options={({ route }) => ({ title: route.params.name })}
       />
       <PlantStack.Screen
         name="Add a Plant"
         component={AddPlant}
+        options={{ headerBackTitleVisible: false }}
       />
     </PlantStack.Navigator>
   );

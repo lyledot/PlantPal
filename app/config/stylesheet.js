@@ -51,6 +51,53 @@ export default StyleSheet.create({
     borderRadius: 8,
     overflow: "hidden",
     marginHorizontal: 3,
-    left: 155,
+    left: 127,
+  },
+  rowPH: {
+    backgroundColor: colors.grey,
+    height: 45,
+    borderRadius: 10, // rounded corners
+    overflow: "hidden",
+    marginHorizontal: 20,
+  },
+  photo: {
+    backgroundColor: colors.dutchWhite,
+    height: 350,
+    borderRadius: 30, // rounded corners
+    overflow: "hidden",
+    margin: 20,
+  },
+  descBox: {
+    backgroundColor: colors.grey,
+    height: 400,
+    borderRadius: 30, // rounded corners
+    overflow: "hidden",
+    marginHorizontal: 20,
+  },
+  descText: {
+    fontFamily: "RobotoRegular",
+    fontSize: 15,
+    padding: 25,
+  },
+  body: {
+    fontFamily: "RobotoRegular",
+    fontSize: 15,
+    paddingLeft: 20,
+    paddingBottom: 10,
+  },
+  input: {
+    backgroundColor: colors.grey,
+    height: 45,
+    borderRadius: 10, // rounded corners
+    overflow: "hidden",
+    marginHorizontal: 20,
+    paddingHorizontal: 15,
+  },
+  picker: {
+    backgroundColor: colors.grey,
+    borderRadius: 10, // rounded corners
+    overflow: "hidden",
+    marginHorizontal: 20,
+    paddingHorizontal: 15,
   },
 });

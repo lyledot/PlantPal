@@ -1,46 +1,69 @@
-import React, { Button, useState } from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   View,
   Text,
-  FlatList,
+  SectionList,
   TouchableOpacity,
-  StyleSheet,
 } from "react-native";
 
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
 
 export default function Schedule({ navigation }) {
-  const [plants, setPlants] = useState([
-    { name: "Calathea Ornata", key: "1" },
-    { name: "Dracaena Trifasciata", key: "2" },
-    { name: "Fittonia", key: "3" },
-    { name: "Monstera Deliciosa", key: "4" },
-    { name: "Oxalis Triangularis", key: "5" },
-    { name: "Pilea Peperomioides", key: "6" },
-    { name: "Pothos", key: "7" },
-  ]);
+  const schedData = [
+    {
+      title: "Monday",
+      data: ["Plant 1", "Plant 2", "Plant 3"],
+    },
+    {
+      title: "Tuesday",
+      data: ["Plant 4", "Plant 5", "Plant 6"],
+    },
+    {
+      title: "Wednesday",
+      data: ["Plant 7", "Plant 8", "Plant 9"],
+    },
+    {
+      title: "Thursday",
+      data: ["Plant 10", "Plant 11", "Plant 12"],
+    },
+    {
+      title: "Friday",
+      data: ["Plant 13", "Plant 14", "Plant 15"],
+    },
+  ];
+
+  const Item = ({ title }) => (
+    <View>
+      <Text style={s.item}>{title}</Text>
+    </View>
+  );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={s.header}>
+    <SafeAreaView>
+      <View style={[s.header, {flexDirection: "row"}]}>
         <Text style={s.title}>Watering Schedule</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Add a Plant")}>
+        <View style={[s.button, {marginLeft: -25}]}>
+          <MaterialCommunityIcons
+            name="pencil"
+            color={"#fff"}
+            size={20}
+            style={{ textAlign: "center", top: 4 }}
+          />
+        </View>
+      </TouchableOpacity>
       </View>
+      
 
-      <View>
-        <Text style={s.subTitle}>Monday</Text>
-      </View>
-
-      <FlatList
-        style={s.container}
-        data={plants}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => console.log( item.name + " has been pressed.") }
-          >
-            <Text style={s.item}> {item.name} </Text>
-          </TouchableOpacity>
+      <SectionList
+        sections={schedData}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ item }) => <Item title={item} />}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={[s.subTitle, { paddingBottom: 30 }]}>{title}</Text>
         )}
       />
     </SafeAreaView>
