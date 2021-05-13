@@ -45,7 +45,7 @@ export default function Schedule({ navigation }) {
     <SafeAreaView>
       <View style={[s.header, {flexDirection: "row"}]}>
         <Text style={s.title}>Watering Schedule</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Add a Plant")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Edit Sched")}>
         <View style={[s.button, {marginLeft: -25}]}>
           <MaterialCommunityIcons
             name="pencil"

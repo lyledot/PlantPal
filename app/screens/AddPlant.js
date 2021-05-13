@@ -13,7 +13,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import s from "../config/stylesheet";
 
 export default function AddPlant({ navigation }) {
-  const [plantChoice, setPlantChoice] = useState("Select");
+  const [plantChoice, setPlantChoice] = useState("==Manual Entry==");
 
   const optionList = [
     "Cancel",

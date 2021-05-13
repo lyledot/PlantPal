@@ -6,6 +6,7 @@ import HomeScreen from "../screens/HomeScreen";
 import Schedule from "../screens/Schedule";
 
 import { PlantStackScreen } from "./PlantStackScreen";
+import { SchedStackScreen } from "./SchedStackScreen";
 
 import colors from "../config/colors.js";
 
@@ -48,7 +49,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen 
       name="Schedule" 
-      component={Schedule} 
+      component={SchedStackScreen} 
       options={{
         tabBarLabel: "Schedule",
         tabBarIcon: ({color, size}) => (

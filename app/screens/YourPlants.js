@@ -84,8 +84,6 @@ export default function YourPlants({ navigation }) {
     language: "english",
   };
 
-  
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>

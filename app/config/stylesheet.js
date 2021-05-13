@@ -100,4 +100,27 @@ export default StyleSheet.create({
     marginHorizontal: 20,
     paddingHorizontal: 15,
   },
+  schedRow: {
+    backgroundColor: colors.grey,
+    height: 45,
+    borderRadius: 10, // rounded corners
+    overflow: "hidden",
+    marginHorizontal: 20,
+    marginTop: 15,
+    paddingTop: 13,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  schedPlant: {
+    fontFamily: "RobotoBold",
+    fontSize: 15,
+    paddingLeft: 20,
+    paddingBottom: 10,
+  },
+  schedDay: {
+    fontFamily: "RobotoRegular",
+    fontSize: 15,
+    paddingBottom: 10,
+    paddingRight: 20,
+  },
 });
