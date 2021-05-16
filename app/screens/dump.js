@@ -50,3 +50,133 @@ export default function AddPlant({ navigation }) {
     value={state.Region}
     onPress={handlePress}
   />;
+
+
+
+
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
+
+import s from "../config/stylesheet";
+// importing external stylesheet under variable name "s"
+
+export default function HomeScreen({ navigation }) {
+  const [row, setRow] = useState(s.itemRed);
+  const [plants, setPlants] = useState([
+    { name: "Pilea Peperomioides", key: "1" },
+    { name: "Dracaena Trifasciata", key: "2" },
+    { name: "Fittonia", key: "3" },
+    { name: "Pothos", key: "4" },
+  ]);
+
+  var checkedFlag = false;
+
+  // when minus button is pressed, it changes the icon and colour
+  const minusHandler = () => {
+    if (checkedFlag == false) {
+      setRow(s.item);
+      checkedFlag = true;
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={s.header}>
+        <Text style={s.title}>Summary</Text>
+      </View>
+
+      <View>
+        <Text style={s.subTitle}>Water me!</Text>
+      </View>
+
+      <FlatList
+        style={s.container}
+        data={plants}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={itemHandler}>
+            <Text style={row}> {item.name} </Text>
+          </TouchableOpacity>
+        )}
+      />
+    </SafeAreaView>
+  );
+        }
+
+
+
+
+        import React, { useState, Component } from "react";
+import { render } from "react-dom";
+import {
+  SafeAreaView,
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
+
+import s from "../config/stylesheet";
+// importing external stylesheet under variable name "s"
+import data from "../database/plants.json";
+
+export default class HomeScreen extends Component({ navigation }) {
+  constructor() {
+    super();
+    this.state = { data };
+  }
+
+  render() {
+    const [row, setRow] = useState(s.itemRed);
+
+    const [plants, setPlants] = useState([
+      { name: "Pilea Peperomioides", key: "1" },
+      { name: "Dracaena Trifasciata", key: "2" },
+      { name: "Fittonia", key: "3" },
+      { name: "Pothos", key: "4" },
+    ]);
+
+    var checkedFlag = false;
+
+    // when minus button is pressed, it changes the icon and colour
+    const itemHandler = () => {
+      if (checkedFlag == false) {
+        setRow(s.item);
+        checkedFlag = true;
+      }
+    };
+
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        {data.map((post) => {
+          return (
+            <View key={post.id}>
+              <Text>{post.name}</Text>
+            </View>
+          );
+        })}
+        <View style={s.header}>
+          <Text style={s.title}>Summary!</Text>
+        </View>
+
+        <View>
+          <Text style={s.subTitle}>Water me!</Text>
+        </View>
+
+        <FlatList
+          style={s.container}
+          data={plants}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={itemHandler}>
+              <Text style={row}> {item.name} </Text>
+            </TouchableOpacity>
+          )}
+        />
+      </SafeAreaView>
+    );
+  }
+}

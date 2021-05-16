@@ -42,7 +42,19 @@ export default StyleSheet.create({
     marginHorizontal: 20,
     backgroundColor: colors.grey,
     paddingTop: 55,
-    paddingLeft: 15,
+    paddingHorizontal: 15,
+  },
+  itemRed: {
+    fontFamily: "RobotoBold",
+    fontSize: 20,
+    height: 100,
+    borderRadius: 15, // rounded corners
+    overflow: "hidden",
+    marginBottom: 15,
+    marginHorizontal: 20,
+    backgroundColor: colors.middleRed,
+    paddingTop: 55,
+    paddingHorizontal: 15,
   },
   button: {
     backgroundColor: colors.dutchWhite,

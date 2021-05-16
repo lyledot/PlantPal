@@ -5,6 +5,7 @@ export default {
     papayaWhip: '#fff4db',
     dutchWhite: '#ead7ae',
     burlywood: '#dcba83',
+    middleRed: '#e8a5a5',
     black: '#000',
     white: '#fff',
     grey: '#dbdbdb',

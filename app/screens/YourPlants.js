@@ -6,6 +6,7 @@ import {
   FlatList,
   TouchableOpacity,
   ActionSheetIOS,
+  ScrollView,
 } from "react-native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -13,12 +14,12 @@ import colors from "../config/colors";
 
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
+import yourPlantsData from "../database/yourPlants.json";
+// importing external database under variable name "yourPlantsData"
 
 var minusFlag = true;
 
 export default function YourPlants({ navigation }) {
-  const [plantChoice, setPlantChoice] = useState("Select");
-
   const filterList = [
     "Cancel",
     "Alphabetical (A-Z)",
@@ -44,28 +45,8 @@ export default function YourPlants({ navigation }) {
       }
     );
 
-  const [plants, setPlants] = useState([
-    { name: "Dracaena Trifasciata", key: "1" },
-    { name: "Calathea Ornata", key: "2" },
-    { name: "Fittonia", key: "3" },
-    { name: "Monstera Deliciosa", key: "4" },
-    { name: "Oxalis Triangularis", key: "5" },
-    { name: "Pilea Peperomioides", key: "6" },
-    { name: "Pothos", key: "7" },
-  ]);
-
   const [minus, setMinus] = useState("minus");
   const [btnColor, setColor] = useState(colors.dutchWhite);
-
-  const sortList = () => {
-    const sorted = [];
-
-    Object.keys(plants).sort().forEach((key) => {sorted[key] = plants[key];
-      });
-    for (let item of plants) {
-      setPlants(sorted[item]);
-    }
-  };
 
   // when minus button is pressed, it changes the icon and colour
   const minusHandler = () => {
@@ -79,11 +60,7 @@ export default function YourPlants({ navigation }) {
       minusFlag = true;
     }
   };
-
-  state = {
-    language: "english",
-  };
-
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>
@@ -120,16 +97,24 @@ export default function YourPlants({ navigation }) {
         </TouchableOpacity>
       </View>
 
-      <FlatList
-        style={s.container}
-        data={plants}
-        extraData={state}
-        renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate("Plant Page", { name: item.name })}>
-            <Text style={s.item}> {item.name} </Text>
-          </TouchableOpacity>
-        )}
-      />
+      <ScrollView style={s.container}>
+        {yourPlantsData.map((post) => {
+          return (
+            <View key={post.id}>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Plant Page", {
+                    name: post.name,
+                    description: post.desc,
+                  })
+                }
+              >
+                <Text style={s.item}>{post.name}</Text>
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </ScrollView>
     </SafeAreaView>
   );
 }

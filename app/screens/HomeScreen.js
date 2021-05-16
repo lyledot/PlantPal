@@ -3,41 +3,48 @@ import {
   SafeAreaView,
   View,
   Text,
-  FlatList,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
+import toWaterData from "../database/toWater.json";
+// importing external database under variable name "toWaterData"
 
 export default function HomeScreen({ navigation }) {
-  const [plants, setPlants] = useState([
-    { name: "Pilea Peperomioides", key: "1" },
-    { name: "Dracaena Trifasciata", key: "2" },
-    { name: "Fittonia", key: "3" },
-    { name: "Pothos", key: "4" },
-  ]);
+  const [row, setRow] = useState(s.itemRed);
+
+  var checkedFlag = false;
+
+  // when minus button is pressed, it changes the icon and colour
+  const itemHandler = () => {
+    if (checkedFlag == false) {
+      setRow(s.item);
+      checkedFlag = true;
+    }
+  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>
         <Text style={s.title}>Summary</Text>
-        <Text style={s.date}>Monday 8th February</Text>
       </View>
 
       <View>
         <Text style={s.subTitle}>Water me!</Text>
       </View>
-
-      <FlatList
-        style={s.container}
-        data={plants}
-        renderItem={({ item }) => (
-          <TouchableOpacity>
-            <Text style={s.item}> {item.name} </Text>
-          </TouchableOpacity>
-        )}
-      />
+      <ScrollView style={s.container}>
+        {toWaterData.map((post) => {
+          return (
+            <View key={post.id}>
+              <TouchableOpacity onPress={itemHandler}>
+                <Text style={row}>{post.name}</Text>
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </ScrollView>
     </SafeAreaView>
   );
 }
