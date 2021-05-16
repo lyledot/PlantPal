@@ -3,10 +3,11 @@ import {
   SafeAreaView,
   View,
   Text,
-  FlatList,
   TouchableOpacity,
   ActionSheetIOS,
   ScrollView,
+  Image,
+  StyleSheet,
 } from "react-native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -60,7 +61,7 @@ export default function YourPlants({ navigation }) {
       minusFlag = true;
     }
   };
-  
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>
@@ -106,10 +107,13 @@ export default function YourPlants({ navigation }) {
                   navigation.navigate("Plant Page", {
                     name: post.name,
                     description: post.desc,
+                    image: post.imageURL,
                   })
                 }
               >
-                <Text style={s.item}>{post.name}</Text>
+                
+                <Image source={{ uri: post.imageURL }} style={styles.image} />
+                <Text style={styles.item}>{post.name}</Text>
               </TouchableOpacity>
             </View>
           );
@@ -118,3 +122,23 @@ export default function YourPlants({ navigation }) {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  item: {
+    position: "absolute",
+    fontFamily: "RobotoBold",
+    fontSize: 20,
+    marginHorizontal: 35,
+    marginTop: 60,
+    color: "#fff"
+  },
+  image: {
+    height: 100,
+    borderRadius: 15, // rounded corners
+    overflow: "hidden",
+    marginBottom: 15,
+    marginHorizontal: 20,
+    paddingTop: 55,
+    paddingHorizontal: 15,
+  },
+});

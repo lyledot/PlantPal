@@ -1,26 +1,44 @@
 [
   {
     "id": 0,
-    "name": "Fittonia",
-    "desc": "Fittonia is a lovely plant with delicately veined, deep green leaves. Although the most popular vein color is silvery white, you can also readily find fittonia with veins in pink, white, and green.",
-    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_be438475-1760-434c-89b4-606807422da1_1400x.jpg?v=1599761746"
+    "name": "Calathea Ornata",
+    "desc": "Calatheas are stunning tropical plants with the most beautifully patterned leaves and this Calathea Ornata is not exception! It’s dark green leaves sport some striking pink stripes that almost look like they've been painted on. Unfortunately, the Calathea family has a well-deserved reputation for being temperamental. This is due to our home conditions being so different their natural tropical habitats.",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_a2716674-2608-4d13-b5b6-9a5fb8fe74cc_1200x.jpg?v=1599761875"
   },
   {
     "id": 1,
+    "name": "Pilea Peperomioides",
+    "desc": "Also known as Chinese Money Plant, the Pilea is fresh looking plant with rubber like leaves in the shape of big coins. Easy to care for and a tidy looking plant. The perfect starter plant",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_be438475-1760-434c-89b4-606807422da1_1400x.jpg?v=1599761746"
+  },
+  {
+    "id": 2,
     "name": "Monstera Deliciosa",
     "desc": "Nicknamed the Swiss cheese plant, the Monstera Deliciosa is very on trend. This plant is one of the easiest around to care for and, thanks to its unique foliage. It originates from the tropical rainforests of southern Mexico but adapts and positively thrives in the most un tropical of places - our homes. If you've the room, want an easy going, striking and interesting green plant to add to your collection or brighten up a stale boring corner of your home. ",
     "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_9adf9116-32c2-4ac2-91a6-66158c6fb64a_1400x.jpg?v=1599727673"
   },
   {
-    "id": 2,
-    "name": "Calathea Ornata",
-    "desc": "Calatheas are stunning tropical plants with the most beautifully patterned leaves and this Calathea Ornata is not exception! It’s dark green leaves sport some striking pink stripes that almost look like they've been painted on. Unfortunately, the Calathea family has a well-deserved reputation for being temperamental. This is due to our home conditions being so different their natural tropical habitats.",
-    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_a2716674-2608-4d13-b5b6-9a5fb8fe74cc_1600x.jpg?v=1599761875"
+    "id": 3,
+    "name": "Oxalis Triangularis",
+    "desc": "Oxalis Triangularis owes its name to it’s eye catching deep purple triangle shaped leaves. These lovely leaves will open during the day and close by night. Although the robustly coloured leaves are the stars of the show, the plant also produces sweet pink trumpet-shaped flowers in spring. These will last for several weeks.",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_ed882891-2ce2-4288-97e7-ebea59c9c436_1200x.jpg?v=1599745099"
   },
   {
-    "id": 3,
+    "id": 4,
+    "name": "Sansevieria Trifasciata Laurentii",
+    "desc": "A striking and very hardy plant with air purifying properties, the snake plant, or Sansevieria Trifasciata Laurentii, is a great plant for first time plant parents.",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_f8059e2d-c434-4386-b985-3a5f6edfc972_1200x.jpg?v=1599728350"
+  },
+  {
+    "id": 5,
+    "name": "Fittonia",
+    "desc": "Fittonia is a lovely plant with delicately veined, deep green leaves. Although the most popular vein color is silvery white, you can also readily find fittonia with veins in pink, white, and green.",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/Botanique-26.8.208715_1200x.jpg?v=1599762562"
+  },
+  {
+    "id": 6,
     "name": "Pothos",
     "desc": "The Philodenron originates in tropical regions, so will grow best in similar conditions indoors. Give them warmth, bright light, and moisture. Can be acclimated to nearly direct sunlight in the right conditions, but philodendron thrive in light shade. If you notice many of the leaves turning yellow at the same time, it can indicate you are giving the plant too much direct light. If you notice it is getting leggy, it may need more light. Keep soil moist at all times.",
-    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_9adf9116-32c2-4ac2-91a6-66158c6fb64a_1400x.jpg?v=1599727673"
+    "imageURL": "https://cdn.shopify.com/s/files/1/0748/9875/products/image_703f228d-c1b7-4d48-aeef-82dce430171c_1200x.jpg?v=1599762389"
   }
 ]

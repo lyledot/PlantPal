@@ -40,7 +40,6 @@ export default StyleSheet.create({
     overflow: "hidden",
     marginBottom: 15,
     marginHorizontal: 20,
-    backgroundColor: colors.grey,
     paddingTop: 55,
     paddingHorizontal: 15,
   },
@@ -73,7 +72,6 @@ export default StyleSheet.create({
     marginHorizontal: 20,
   },
   photo: {
-    backgroundColor: colors.dutchWhite,
     height: 350,
     borderRadius: 30, // rounded corners
     overflow: "hidden",
