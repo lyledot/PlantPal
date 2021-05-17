@@ -18,7 +18,6 @@ const PlantStackScreen = () => {
         name="Your Plants"
         component={YourPlants}
         options={{ headerShown: false, headerTitle: " " }}
-        // instead of headerBackTitleVisible, I need
       />
       <PlantStack.Screen
         name="Plant Page"

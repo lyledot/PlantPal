@@ -32,8 +32,26 @@ export default StyleSheet.create({
     paddingTop: 10,
     flex: 1,
   },
+  imageText: {
+    position: "absolute",
+    fontFamily: "RobotoBold",
+    fontSize: 20,
+    marginHorizontal: 35,
+    marginTop: 60,
+    color: "#fff"
+  },
+  image: {
+    height: 100,
+    borderRadius: 15, // rounded corners
+    overflow: "hidden",
+    marginBottom: 15,
+    marginHorizontal: 20,
+    paddingTop: 55,
+    paddingHorizontal: 15,
+  },
   item: {
     fontFamily: "RobotoBold",
+    backgroundColor: colors.grey,
     fontSize: 20,
     height: 100,
     borderRadius: 15, // rounded corners

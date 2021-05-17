@@ -7,7 +7,7 @@ import {
   ActionSheetIOS,
   ScrollView,
   Image,
-  StyleSheet,
+  Button
 } from "react-native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -48,7 +48,7 @@ export default function YourPlants({ navigation }) {
 
   const [minus, setMinus] = useState("minus");
   const [btnColor, setColor] = useState(colors.dutchWhite);
-
+  
   // when minus button is pressed, it changes the icon and colour
   const minusHandler = () => {
     if (minusFlag == true) {
@@ -111,9 +111,8 @@ export default function YourPlants({ navigation }) {
                   })
                 }
               >
-                
-                <Image source={{ uri: post.imageURL }} style={styles.image} />
-                <Text style={styles.item}>{post.name}</Text>
+                <Image source={{ uri: post.imageURL }} style={s.image} />
+                <Text style={s.imageText}>{post.name}</Text>
               </TouchableOpacity>
             </View>
           );
@@ -122,23 +121,3 @@ export default function YourPlants({ navigation }) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  item: {
-    position: "absolute",
-    fontFamily: "RobotoBold",
-    fontSize: 20,
-    marginHorizontal: 35,
-    marginTop: 60,
-    color: "#fff"
-  },
-  image: {
-    height: 100,
-    borderRadius: 15, // rounded corners
-    overflow: "hidden",
-    marginBottom: 15,
-    marginHorizontal: 20,
-    paddingTop: 55,
-    paddingHorizontal: 15,
-  },
-});

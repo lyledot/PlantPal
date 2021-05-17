@@ -16,7 +16,7 @@ export default function EditSchedule({ navigation }) {
   const [dayChoice, setDayChoice] = useState("Not Set");
 
   const dayList = [
-    "Cancel",
+    "No Set Day",
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -24,14 +24,13 @@ export default function EditSchedule({ navigation }) {
     "Friday",
     "Saturday",
     "Sunday",
-    "Not Set",
   ];
 
   const onPress = () =>
     ActionSheetIOS.showActionSheetWithOptions(
       {
         options: [
-          "Cancel",
+          "No Set Day",
           "Monday",
           "Tuesday",
           "Wednesday",
@@ -39,7 +38,6 @@ export default function EditSchedule({ navigation }) {
           "Friday",
           "Saturday",
           "Sunday",
-          "Not Set",
         ],
         cancelButtonIndex: 0,
       },
