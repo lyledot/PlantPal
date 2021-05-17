@@ -7,7 +7,7 @@ import {
   ActionSheetIOS,
   ScrollView,
   Image,
-  Button
+  Button,
 } from "react-native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -48,7 +48,7 @@ export default function YourPlants({ navigation }) {
 
   const [minus, setMinus] = useState("minus");
   const [btnColor, setColor] = useState(colors.dutchWhite);
-  
+
   // when minus button is pressed, it changes the icon and colour
   const minusHandler = () => {
     if (minusFlag == true) {
@@ -117,6 +117,7 @@ export default function YourPlants({ navigation }) {
             </View>
           );
         })}
+
       </ScrollView>
     </SafeAreaView>
   );

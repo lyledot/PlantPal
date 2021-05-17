@@ -4,16 +4,18 @@ import {
   View,
   Text,
   TouchableOpacity,
-  ScrollView,
+  Button,
 } from "react-native";
+
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
-import toWaterData from "../database/toWater.json";
+import factData from "../database/facts.json";
 // importing external database under variable name "toWaterData"
 
 export default function HomeScreen({ navigation }) {
-  const [row, setRow] = useState(s.itemRed);
+  const [fact, setFact] = useState("Press the button to generate a fact!");
 
   var checkedFlag = false;
 
@@ -25,26 +27,28 @@ export default function HomeScreen({ navigation }) {
     }
   };
 
+  const randomGen = () => {
+    const fact = factData[Math.floor(Math.random() * factData.length)];
+    setFact(fact.text);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={s.header}>
-        <Text style={s.title}>Summary</Text>
+        <Text style={s.title}>Houseplant Fact</Text>
       </View>
+      <Text style={s.factSpace}>{fact}</Text>
 
-      <View>
-        <Text style={s.subTitle}>Water me!</Text>
-      </View>
-      <ScrollView style={s.container}>
-        {toWaterData.map((post) => {
-          return (
-            <View key={post.id}>
-              <TouchableOpacity onPress={itemHandler}>
-                <Text style={row}>{post.name}</Text>
-              </TouchableOpacity>
-            </View>
-          );
-        })}
-      </ScrollView>
+      <TouchableOpacity onPress={randomGen}>
+        <View style={s.factButton}>
+          <MaterialCommunityIcons
+            name="refresh"
+            color={"#fff"}
+            size={20}
+            style={{ textAlign: "center", top: 5 }}
+          />
+        </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }

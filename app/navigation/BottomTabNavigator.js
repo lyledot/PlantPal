@@ -3,10 +3,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import HomeScreen from "../screens/HomeScreen";
-import Schedule from "../screens/Schedule";
 
 import { PlantStackScreen } from "./PlantStackScreen";
-import { SchedStackScreen } from "./SchedStackScreen";
+import { ToDoStackScreen } from "./ToDoStackScreen";
 
 import colors from "../config/colors.js";
 
@@ -48,13 +47,13 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen 
-      name="Schedule" 
-      component={SchedStackScreen} 
+      name="To Do" 
+      component={ToDoStackScreen} 
       options={{
-        tabBarLabel: "Schedule",
+        tabBarLabel: "To Do",
         tabBarIcon: ({color, size}) => (
           <MaterialCommunityIcons
-            name="calendar"
+            name="note"
             color={color}
             size={size}
           />

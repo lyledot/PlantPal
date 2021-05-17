@@ -38,7 +38,7 @@ export default StyleSheet.create({
     fontSize: 20,
     marginHorizontal: 35,
     marginTop: 60,
-    color: "#fff"
+    color: "#fff",
   },
   image: {
     height: 100,
@@ -58,18 +58,6 @@ export default StyleSheet.create({
     overflow: "hidden",
     marginBottom: 15,
     marginHorizontal: 20,
-    paddingTop: 55,
-    paddingHorizontal: 15,
-  },
-  itemRed: {
-    fontFamily: "RobotoBold",
-    fontSize: 20,
-    height: 100,
-    borderRadius: 15, // rounded corners
-    overflow: "hidden",
-    marginBottom: 15,
-    marginHorizontal: 20,
-    backgroundColor: colors.middleRed,
     paddingTop: 55,
     paddingHorizontal: 15,
   },
@@ -119,7 +107,6 @@ export default StyleSheet.create({
     borderRadius: 10, // rounded corners
     overflow: "hidden",
     marginHorizontal: 20,
-    paddingHorizontal: 15,
   },
   picker: {
     backgroundColor: colors.grey,
@@ -128,27 +115,41 @@ export default StyleSheet.create({
     marginHorizontal: 20,
     paddingHorizontal: 15,
   },
-  schedRow: {
+  toDoRow: {
     backgroundColor: colors.grey,
     height: 45,
     borderRadius: 10, // rounded corners
     overflow: "hidden",
-    marginHorizontal: 20,
     marginTop: 15,
-    paddingTop: 13,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    marginHorizontal: 20,
+    paddingHorizontal: 10,
   },
-  schedPlant: {
+  factSpace: {
     fontFamily: "RobotoBold",
-    fontSize: 15,
-    paddingLeft: 20,
-    paddingBottom: 10,
+    backgroundColor: colors.grey,
+    fontSize: 20,
+    flex: 0.5,
+    borderRadius: 15, // rounded corners
+    overflow: "hidden",
+    margin: 20,
+    paddingTop: 130,
+    paddingHorizontal: 15,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  schedDay: {
-    fontFamily: "RobotoRegular",
-    fontSize: 15,
-    paddingBottom: 10,
-    paddingRight: 20,
+  factButton: {
+    backgroundColor: colors.dutchWhite,
+    margin: 20,
+    borderRadius: 8,
+    overflow: "hidden",
+    height: 30,
+  },
+  toDoButton: {
+    backgroundColor: colors.dutchWhite,
+    marginHorizontal: 20,
+    marginTop: 20,
+    borderRadius: 8,
+    overflow: "hidden",
+    height: 30,
   },
 });
