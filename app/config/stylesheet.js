@@ -68,14 +68,7 @@ export default StyleSheet.create({
     borderRadius: 8,
     overflow: "hidden",
     marginHorizontal: 3,
-    left: 127,
-  },
-  rowPH: {
-    backgroundColor: colors.grey,
-    height: 45,
-    borderRadius: 10, // rounded corners
-    overflow: "hidden",
-    marginHorizontal: 20,
+    left: 150,
   },
   photo: {
     height: 350,
@@ -85,7 +78,6 @@ export default StyleSheet.create({
   },
   descBox: {
     backgroundColor: colors.grey,
-    height: 400,
     borderRadius: 30, // rounded corners
     overflow: "hidden",
     marginHorizontal: 20,
@@ -93,7 +85,7 @@ export default StyleSheet.create({
   descText: {
     fontFamily: "RobotoRegular",
     fontSize: 15,
-    padding: 25,
+    paddingHorizontal: 25,
   },
   body: {
     fontFamily: "RobotoRegular",
@@ -151,5 +143,11 @@ export default StyleSheet.create({
     borderRadius: 8,
     overflow: "hidden",
     height: 30,
+  },
+  descHeading: {
+    fontFamily: "RobotoBold",
+    fontSize: 15,
+    paddingTop: 25,
+    paddingHorizontal: 25,
   },
 });

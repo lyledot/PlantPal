@@ -3,21 +3,14 @@ import {
   SafeAreaView,
   View,
   Text,
-  ScrollView,
-  Image,
-  TextInput,
-  Button,
   FlatList,
 } from "react-native";
 import { useState } from "react";
-import produce from "immer";
 
 import s from "../config/stylesheet";
 import ToDoItem from "./ToDoItem";
 import AddToDo from "./AddToDo";
 // importing external stylesheet under variable name "s"
-
-const Notes = (props) => props.data.map((note) => <Text>{note.text}</Text>);
 
 export default function ViewTodos({ route, navigation }) {
   const [todos, setTodos] = useState([]);
