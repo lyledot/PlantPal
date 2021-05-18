@@ -131,7 +131,7 @@ export default StyleSheet.create({
   },
   factButton: {
     backgroundColor: colors.dutchWhite,
-    margin: 20,
+    marginHorizontal: 20,
     borderRadius: 8,
     overflow: "hidden",
     height: 30,
