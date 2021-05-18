@@ -4,6 +4,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from "../screens/HomeScreen";
 
+// importing the stackScreen for nested navigation
 import { PlantStackScreen } from "./PlantStackScreen";
 import { ToDoStackScreen } from "./ToDoStackScreen";
 
@@ -14,6 +15,7 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
+    // setting the initial route and colours for the bottom tab navigator
       initialRouteName="Home"
       tabBarOptions={{
         activeTintColor: colors.olivineLight,
@@ -25,6 +27,7 @@ const BottomTabNavigator = () => {
         options={{
           tabBarLabel: "Plants",
           tabBarIcon: ({ color, size }) => (
+            // using external icons
             <MaterialCommunityIcons
               name="format-list-bulleted"
               color={color}

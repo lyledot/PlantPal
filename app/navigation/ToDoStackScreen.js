@@ -3,6 +3,7 @@ import {
   createStackNavigator,
 } from "@react-navigation/stack";
 
+// importing screens for stack navigator use
 import ViewTodos from "../screens/ViewTodos";
 import AddToDo from "../screens/AddToDo";
 
@@ -15,6 +16,7 @@ const ToDoStackScreen = () => {
         name="ViewTodos"
         component={ViewTodos}
         options={{ headerShown: false, headerTitle: " " }}
+        // removes the header and the text for the back button on the following screen.
       />
       <ToDoStack.Screen
         name="AddToDo"

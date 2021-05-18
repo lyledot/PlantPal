@@ -23,6 +23,9 @@ export default function YourPlants({ navigation }) {
       </View>
 
       <ScrollView style={s.container}>
+        {/* Generates a scrollable list of each plant in the JSON array,
+        this will display the plant name and a small image.
+        Upon pressing on the item, it will take the user to a dedicated plant page with more information about the plant. */}
         {plantsData.map((post) => {
           return (
             <View key={post.id}>
@@ -34,7 +37,7 @@ export default function YourPlants({ navigation }) {
                     image: post.imageURL,
                     light: post.light,
                     temp: post.temperature,
-                    sched: post.watering
+                    sched: post.watering,
                   })
                 }
               >

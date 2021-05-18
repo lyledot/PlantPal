@@ -4,11 +4,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Button,
 } from "react-native";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
+// importing external icons for use in buttons
 import s from "../config/stylesheet";
 // importing external stylesheet under variable name "s"
 import factData from "../database/facts.json";
@@ -16,21 +15,14 @@ import factData from "../database/facts.json";
 
 export default function HomeScreen({ navigation }) {
   const [fact, setFact] = useState("Press the button to generate a fact!");
-
-  var checkedFlag = false;
-
-  // when minus button is pressed, it changes the icon and colour
-  const itemHandler = () => {
-    if (checkedFlag == false) {
-      setRow(s.item);
-      checkedFlag = true;
-    }
-  };
+  // useState updates the fact whenever the user presses the button
 
   const randomGen = () => {
     const fact = factData[Math.floor(Math.random() * factData.length)];
     setFact(fact.text);
   };
+  // generates a random number and uses that to retrieve a fact from the external
+  // JSON file "facts.json" for display.
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -39,6 +31,7 @@ export default function HomeScreen({ navigation }) {
       </View>
       <Text style={s.factSpace}>{fact}</Text>
 
+      {/* A button for generating a new, random fact. */}
       <TouchableOpacity onPress={randomGen}>
         <View style={s.factButton}>
           <MaterialCommunityIcons
